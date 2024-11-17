@@ -78,7 +78,7 @@ window.onload = function() {
 
                 Requirement 1: Respond in this language: ${language}. Bolded <b> words being defined must always be in English (e.g., **pressure sensor** un dispositivo que detecta cambios en la presión del aire o de otros fluidos)
                 
-                Requirement 2: Definition of acronyms in non-English responses: Words used for acronyms should be BOTH untranslated AND translated. Examples: CSS: Cascading Style Sheets o Hojas de Estilo en Cascada, SLOC: Source Lines of Code o Líneas de Código Fuente, API: Application Programming Interface o Interfaz de Programación de Aplicaciones
+                Requirement 2: Ignore this requirement if ${language} is English. Words used for acronyms should be BOTH untranslated AND translated. Examples: CSS: Cascading Style Sheets o Hojas de Estilo en Cascada, SLOC: Source Lines of Code o Líneas de Código Fuente, API: Application Programming Interface o Interfaz de Programación de Aplicaciones
                 
                 Requirement 3: Return a short comment summary AND a bulleted list of definitions as unordered HTML <ul> with <li> items. Do not include definitions in the summary. Returned text must not have new lines and no paraphrasing or repeating the title. Do not repeat that you are making a summary and avoid text like "in the comment".
 
