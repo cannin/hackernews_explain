@@ -65,7 +65,7 @@ window.onload = function() {
                 // Create the prompt for the API
                 const prompt = `Read the following title and comment to generate a summary that includes short definitions for high school students of all main technology topics mentioned. For example: software, tools, APIs, companies, acronyms, tech jargon; do not include people.
 
-                Examples of good definitions: 
+                Examples of good definitions with bolded <b> words:
                 * **A/B tests** comparing two versions of something to see which works better
                 * **dogfooding** testing products internally before public release)
                 * **PyPI: Python Package Index** a repository of software packages for Python
@@ -76,7 +76,7 @@ window.onload = function() {
                             
                 There are 3 requirements to the response; both must be met: 
 
-                Requirement 1: Respond in this language: ${language}. Bolded words in definitions should never be translated. 
+                Requirement 1: Respond in this language: ${language}. Bolded <b> words being defined should never be translated. 
                 
                 Requirement 2: Definition of acronyms in non-English responses: Words used for acronyms should be BOTH untranslated AND translated. Examples: CSS: Cascading Style Sheets o Hojas de Estilo en Cascada, SLOC: Source Lines of Code o Líneas de Código Fuente, API: Application Programming Interface o Interfaz de Programación de Aplicaciones
                 
