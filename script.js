@@ -64,6 +64,13 @@ window.onload = function() {
 
                 // Create the prompt for the API
                 const prompt = `Read the following title and description to generate a summary of the title and comment in the description tag that includes very brief explanations for high school students of all main technology topics mentioned (e.g., software, tools, APIs, companies, acronyms, tech jargon). The text summary must not have XML tags, no new lines, no paraphrasing or repeating the title, and should be in English. Do not repeat that you are making a summary.
+
+                Examples of explanations: 
+                * A/B tests (comparing two versions of something to see which works better) 
+                * dogfooding (testing products internally before public release)
+                * PyPI (Python Package Index, a repository of software packages for Python)
+                * API (Application Programming Interface, a set of rules that allows different software applications to communicate with each other)
+                * SLOC (Source Lines of Code, a software metric used to measure the size of a computer program)
                 
                 Also, bold <b> HTML tags around important words and keywords in the summaries. Highlight key words and phrases (e.g., names, institutes, locations, amounts) with bold. At least 1 word must be made bold per summary. IMPORTANT USE HTML <b> not Markdown tags!!! Example: <b>Biden</b> visited <b>Vietnam</b> today. 
                 
