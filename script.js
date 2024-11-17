@@ -71,6 +71,8 @@ window.onload = function() {
                 * PyPI (Python Package Index, a repository of software packages for Python)
                 * API (Application Programming Interface, a set of rules that allows different software applications to communicate with each other)
                 * SLOC (Source Lines of Code, a software metric used to measure the size of a computer program)
+                * Google (a multinational technology company that specializes in Internet-related services and products)
+                * IntelliJ IDEA (a Java integrated development environment for software developers)
                 
                 Also, bold <b> HTML tags around important words and keywords in the summaries. Highlight key words and phrases (e.g., names, institutes, locations, amounts) with bold. At least 1 word must be made bold per summary. IMPORTANT USE HTML <b> not Markdown tags!!! Example: <b>Biden</b> visited <b>Vietnam</b> today. 
                 
