@@ -51,21 +51,21 @@ window.onload = function() {
             const xmlDoc = parser.parseFromString(str, "text/xml");
             const items = Array.from(xmlDoc.getElementsByTagName("item")).slice(0, maxItems);
 
-            // Iterate over each RSS item and send the title and description to the OpenAI API
+            // Iterate over each RSS item and send the title and comment to the OpenAI API
             items.forEach(item => {
                 let title = item.getElementsByTagName("title")[0].textContent.match(/"(.*?)"/)[1];
-                let description = item.getElementsByTagName("description")[0].textContent;
+                let comment = item.getElementsByTagName("description")[0].textContent;
                 let link = item.getElementsByTagName("link")[0].textContent;
 
-                // Strip HTML tags from the description
+                // Strip HTML tags from the comment
                 const tmp = document.createElement("div");
-                tmp.innerHTML = description;
-                description = tmp.textContent || tmp.innerText || "";
+                tmp.innerHTML = comment;
+                comment = tmp.textContent || tmp.innerText || "";
 
                 // Create the prompt for the API
-                const prompt = `Read the following title and description to generate a summary of the title and comment in the description tag that includes short explanations for high school students of all main technology topics mentioned. For example: software, tools, APIs, companies, acronyms, tech jargon; do not include people.
+                const prompt = `Read the following title and comment to generate a summary that includes short explanations for high school students of all main technology topics mentioned. For example: software, tools, APIs, companies, acronyms, tech jargon; do not include people.
 
-                Examples of good short explanations: 
+                Examples of good explanations: 
                 * A/B tests: comparing two versions of something to see which works better
                 * dogfooding: testing products internally before public release)
                 * PyPI: Python Package Index, a repository of software packages for Python
@@ -76,13 +76,15 @@ window.onload = function() {
                             
                 There are 3 requirements to the response; both must be met: 
 
-                Requirement 1: Respond in this language: ${language}. Do not tranlate the word or phrase being explained; it should be the untranslated word from the original description. 
+                Requirement 1: Respond in this language: ${language}. Do not tranlate the word or phrase being explained; it should be the untranslated from the original comment. 
                 
-                Requirement 2: Acronyms in non-English responses: Words used as the basis of acronyms should BOTH untranslated AND translated. Examples: CSS: Cascading Style Sheets o Hojas de Estilo en Cascada, SLOC: Source Lines of Code o Líneas de Código Fuente, API: Application Programming Interface o Interfaz de Programación de Aplicaciones
+                Requirement 2: Acronyms in non-English responses: Words used for acronyms should be BOTH untranslated AND translated. Examples: CSS: Cascading Style Sheets o Hojas de Estilo en Cascada, SLOC: Source Lines of Code o Líneas de Código Fuente, API: Application Programming Interface o Interfaz de Programación de Aplicaciones
                 
-                Requirement 3: Return a short description summary and a bulleted list of explanations as unordered HTML <ul> with <li> items. Do not include explanations in the description summary. Returned text must not have XML tags, no new lines, no paraphrasing or repeating the title. Do not repeat that you are making a summary.
+                Requirement 3: Return a short comment summary and a bulleted list of explanations as unordered HTML <ul> with <li> items. Do not include explanations in the summary. Returned text must not have XML tags, no new lines, no paraphrasing or repeating the title. Do not repeat that you are making a summary.
 
-                \nTitle: ${title}\nDescription: ${description}`;
+                The response is incorrect unless all requirements are followed.
+
+                \nTitle: ${title}\nComment: ${comment}`;
               
                 console.log("Prompt: " + prompt);
 
@@ -114,7 +116,7 @@ window.onload = function() {
                     const listItem = document.createElement("li");
                     listItem.innerHTML = `
                         <p><b>Title: ${title}</b></p>
-                        <p><b>Original Comment:</b> ${description}</p>
+                        <p><b>Original Comment:</b> ${comment}</p>
                         <p><b>Summary:</b> ${summary} <a href='${link}' target='_blank'>[Link]</a></p>
                     `;
                     mainDiv.appendChild(listItem);
