@@ -63,9 +63,11 @@ window.onload = function() {
                 description = tmp.textContent || tmp.innerText || "";
 
                 // Create the prompt for the API
-                const prompt = `Read the following title and description to generate a summary of the title and comment in the description tag that includes very brief explanations for high school students of the main technology topics mentioned (e.g., software, tools, APIs, companies, acronyms, tech jargon). The text summary must not have XML tags, no new lines, no paraphrasing or repeating the title, and should be in English. Do not repeat that you are making a summary.
+                const prompt = `Read the following title and description to generate a summary of the title and comment in the description tag that includes very brief explanations for high school students of all main technology topics mentioned (e.g., software, tools, APIs, companies, acronyms, tech jargon). The text summary must not have XML tags, no new lines, no paraphrasing or repeating the title, and should be in English. Do not repeat that you are making a summary.
                 
-                Put bold <b> HTML tags around important words and keywords in the summaries. Highlight key words and phrases (e.g., names, institutes, locations, amounts) with bold in the following text except news source at the end. At least 1 word must be made bold per summary.IMPORTANT USE HTML <b> not Markdown tags!!! Example: <b>Biden</b> visited <b>Vietnam</b> today. You must translate your responses to this language: ${language}
+                Also, bold <b> HTML tags around important words and keywords in the summaries. Highlight key words and phrases (e.g., names, institutes, locations, amounts) with bold. At least 1 word must be made bold per summary. IMPORTANT USE HTML <b> not Markdown tags!!! Example: <b>Biden</b> visited <b>Vietnam</b> today. 
+                
+                You must translate your response to this language: ${language}
                 
                 \n\nTitle: ${title}\nDescription: ${description}`;
               
