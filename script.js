@@ -63,7 +63,7 @@ window.onload = function() {
                 description = tmp.textContent || tmp.innerText || "";
 
                 // Create the prompt for the API
-                const prompt = `Read the following title and description to generate a summary of the title and comment in the description tag that includes short explanations for high school students of all main technology topics mentioned (e.g., software, tools, APIs, companies, acronyms, tech jargon). The text summary must not have XML tags, no new lines, no paraphrasing or repeating the title, and should be in English. Do not repeat that you are making a summary.
+                const prompt = `Read the following title and description to generate a summary of the title and comment in the description tag that includes short explanations for high school students of all main technology topics mentioned (e.g., software, tools, APIs, companies, acronyms, tech jargon). The text summary must not have XML tags, no new lines, no paraphrasing or repeating the title. Do not repeat that you are making a summary.
 
                 Examples of good short explanations: 
                 * A/B tests (comparing two versions of something to see which works better) 
@@ -74,11 +74,11 @@ window.onload = function() {
                 * Google (a multinational technology company that specializes in Internet-related services and products)
                 * IntelliJ IDEA (a Java integrated development environment for software developers)
                 
-                Return any bulleted list as an unordered HTML <ol> with <li> items.
+                Return any bulleted list as unordered HTML <ul> with <li> items.
             
-                You must respond in this language: ${language}
+                Respond in this language: ${language}
                 
-                \n\nTitle: ${title}\nDescription: ${description}`;
+                \nTitle: ${title}\nDescription: ${description}`;
               
                 console.log("Prompt: " + prompt);
 
