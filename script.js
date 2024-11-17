@@ -63,9 +63,9 @@ window.onload = function() {
                 comment = tmp.textContent || tmp.innerText || "";
 
                 // Create the prompt for the API
-                const prompt = `Read the following title and comment to generate a summary that includes short explanations for high school students of all main technology topics mentioned. For example: software, tools, APIs, companies, acronyms, tech jargon; do not include people.
+                const prompt = `Read the following title and comment to generate a summary that includes short definitions for high school students of all main technology topics mentioned. For example: software, tools, APIs, companies, acronyms, tech jargon; do not include people.
 
-                Examples of good explanations: 
+                Examples of good definitions: 
                 * **A/B tests** comparing two versions of something to see which works better
                 * **dogfooding** testing products internally before public release)
                 * **PyPI: Python Package Index** a repository of software packages for Python
@@ -76,11 +76,11 @@ window.onload = function() {
                             
                 There are 3 requirements to the response; both must be met: 
 
-                Requirement 1: Respond in this language: ${language}. Bolded words in explanations should never be translated. 
+                Requirement 1: Respond in this language: ${language}. Bolded words in definitions should never be translated. 
                 
-                Requirement 2: Explanation of acronyms in non-English responses: Words used for acronyms should be BOTH untranslated AND translated. Examples: CSS: Cascading Style Sheets o Hojas de Estilo en Cascada, SLOC: Source Lines of Code o Líneas de Código Fuente, API: Application Programming Interface o Interfaz de Programación de Aplicaciones
+                Requirement 2: Definition of acronyms in non-English responses: Words used for acronyms should be BOTH untranslated AND translated. Examples: CSS: Cascading Style Sheets o Hojas de Estilo en Cascada, SLOC: Source Lines of Code o Líneas de Código Fuente, API: Application Programming Interface o Interfaz de Programación de Aplicaciones
                 
-                Requirement 3: Return a short comment summary and a bulleted list of explanations as unordered HTML <ul> with <li> items. Do not include explanations in the summary. Returned text must not have XML tags, no new lines, no paraphrasing or repeating the title. Do not repeat that you are making a summary.
+                Requirement 3: Return a short comment summary AND a bulleted list of definitions as unordered HTML <ul> with <li> items. Do not include definitions in the summary. Returned text must not have XML tags, no new lines, no paraphrasing or repeating the title. Do not repeat that you are making a summary.
 
                 The response is incorrect unless all requirements are followed.
 
