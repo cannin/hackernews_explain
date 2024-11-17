@@ -63,7 +63,7 @@ window.onload = function() {
                 description = tmp.textContent || tmp.innerText || "";
 
                 // Create the prompt for the API
-                const prompt = `Read the following title and description to generate a summary of the title and comment in the description tag that includes short explanations for high school students of all main technology topics mentioned (e.g., software, tools, APIs, companies, acronyms, tech jargon). The text summary must not have XML tags, no new lines, no paraphrasing or repeating the title. Do not repeat that you are making a summary.
+                const prompt = `Read the following title and description to generate a summary of the title and comment in the description tag that includes short explanations for high school students of all main technology topics mentioned (e.g., software, tools, APIs, companies, acronyms, tech jargon).
 
                 Examples of good short explanations: 
                 * A/B tests: comparing two versions of something to see which works better
@@ -73,11 +73,11 @@ window.onload = function() {
                 * SLOC: Source Lines of Code, a software metric used to measure the size of a computer program
                 * Google: a multinational technology company that specializes in Internet-related services and products
                 * IntelliJ IDEA: a Java integrated development environment for software developers:
-                
-                Return any bulleted list as unordered HTML <ul> with <li> items.
-            
+                            
                 Respond in this language: ${language}. Do not tranlate the word or phrase being explained; it should be the untranslated word from the original description. 
                 
+                Return a short description summary and a bulleted list of explanations as unordered HTML <ul> with <li> items. Do not include explanations in the description summary. Returned text must not have XML tags, no new lines, no paraphrasing or repeating the title. Do not repeat that you are making a summary.
+
                 \nTitle: ${title}\nDescription: ${description}`;
               
                 console.log("Prompt: " + prompt);
