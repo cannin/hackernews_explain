@@ -66,17 +66,17 @@ window.onload = function() {
                 const prompt = `Read the following title and description to generate a summary of the title and comment in the description tag that includes short explanations for high school students of all main technology topics mentioned (e.g., software, tools, APIs, companies, acronyms, tech jargon). The text summary must not have XML tags, no new lines, no paraphrasing or repeating the title. Do not repeat that you are making a summary.
 
                 Examples of good short explanations: 
-                * A/B tests (comparing two versions of something to see which works better) 
-                * dogfooding (testing products internally before public release)
-                * PyPI (Python Package Index, a repository of software packages for Python)
-                * API (Application Programming Interface, a set of rules that allows different software applications to communicate with each other)
-                * SLOC (Source Lines of Code, a software metric used to measure the size of a computer program)
-                * Google (a multinational technology company that specializes in Internet-related services and products)
-                * IntelliJ IDEA (a Java integrated development environment for software developers)
+                * A/B tests: comparing two versions of something to see which works better
+                * dogfooding: testing products internally before public release)
+                * PyPI: Python Package Index, a repository of software packages for Python
+                * API: Application Programming Interface, a set of rules that allows different software applications to communicate with each other
+                * SLOC: Source Lines of Code, a software metric used to measure the size of a computer program
+                * Google: a multinational technology company that specializes in Internet-related services and products
+                * IntelliJ IDEA: a Java integrated development environment for software developers:
                 
                 Return any bulleted list as unordered HTML <ul> with <li> items.
             
-                Respond in this language: ${language}
+                Respond in this language: ${language}. Words/phrases being explained should have the untranslated word. 
                 
                 \nTitle: ${title}\nDescription: ${description}`;
               
