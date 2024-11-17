@@ -53,7 +53,7 @@ window.onload = function() {
 
             // Iterate over each RSS item and send the title and description to the OpenAI API
             items.forEach(item => {
-                let title = item.getElementsByTagName("title")[0].textContent;
+                let title = item.getElementsByTagName("title")[0].textContent.match(/"(.*?)"/)[1];
                 let description = item.getElementsByTagName("description")[0].textContent;
                 let link = item.getElementsByTagName("link")[0].textContent;
 
