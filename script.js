@@ -73,9 +73,7 @@ window.onload = function() {
                 * SLOC (Source Lines of Code, a software metric used to measure the size of a computer program)
                 * Google (a multinational technology company that specializes in Internet-related services and products)
                 * IntelliJ IDEA (a Java integrated development environment for software developers)
-                
-                Also, bold <b> HTML tags around important words and keywords in the summaries. Highlight key words and phrases (e.g., names, institutes, locations, amounts) with bold. At least 1 word must be made bold per summary. IMPORTANT USE HTML <b> not Markdown tags!!! Example: <b>Biden</b> visited <b>Vietnam</b> today.
-                
+            
                 You must respond in this language: ${language}
                 
                 \n\nTitle: ${title}\nDescription: ${description}`;
