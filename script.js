@@ -76,7 +76,7 @@ window.onload = function() {
                 
                 Return any bulleted list as unordered HTML <ul> with <li> items.
             
-                Respond in this language: ${language}. Words/phrases being explained should have the untranslated word. 
+                Respond in this language: ${language}. Do not tranlate the word or phrase being explained; it should be the untranslated word from the original description. 
                 
                 \nTitle: ${title}\nDescription: ${description}`;
               
