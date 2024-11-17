@@ -68,7 +68,7 @@ window.onload = function() {
                 Put bold <b> HTML tags around important words and keywords in the summaries. Highlight key words and phrases (e.g., names, institutes, locations, amounts) with bold in the following text except news source at the end. At least 1 word must be made bold per summary.IMPORTANT USE HTML <b> not Markdown tags!!! Example: <b>Biden</b> visited <b>Vietnam</b> today. You must translate your responses to this language: ${language}
                 
                 \n\nTitle: ${title}\nDescription: ${description}`;
-
+              
                 console.log("Prompt: " + prompt);
 
                 // API request data
@@ -94,10 +94,14 @@ window.onload = function() {
                 })
                 .then(apiData => {
                     let summary = apiData.choices[0].message.content;
-                    summary += ` <a href='${link}' target='_blank'>[Link]</a>`;
+                    summary = summary.replace(/\*\*(.*?)\*\*/g, '<b>$1</b>');
 
                     const listItem = document.createElement("li");
-                    listItem.innerHTML = summary;
+                    listItem.innerHTML = `
+                        <p><b>Title:</b> ${title}</p>
+                        <p><b>Original Comment:</b> ${description}</p>
+                        <p><b>Summary:</b> ${summary} <a href='${link}' target='_blank'>[Link]</a></p>
+                    `;
                     mainDiv.appendChild(listItem);
                 })
                 .catch(error => {
