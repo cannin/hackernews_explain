@@ -76,7 +76,7 @@ window.onload = function() {
                             
                 There are 3 requirements to the response; both must be met: 
 
-                Requirement 1: Respond in this language: ${language}. Bolded <b> words being defined should never be translated. 
+                Requirement 1: Respond in this language: ${language}. Bolded <b> words being defined must always be in English (e.g., **pressure sensor** un dispositivo que detecta cambios en la presión del aire o de otros fluidos)
                 
                 Requirement 2: Definition of acronyms in non-English responses: Words used for acronyms should be BOTH untranslated AND translated. Examples: CSS: Cascading Style Sheets o Hojas de Estilo en Cascada, SLOC: Source Lines of Code o Líneas de Código Fuente, API: Application Programming Interface o Interfaz de Programación de Aplicaciones
                 
