@@ -73,6 +73,8 @@ window.onload = function() {
                 * SLOC (Source Lines of Code, a software metric used to measure the size of a computer program)
                 * Google (a multinational technology company that specializes in Internet-related services and products)
                 * IntelliJ IDEA (a Java integrated development environment for software developers)
+                
+                Return any bulleted list as an unordered HTML <ol> with <li> items.
             
                 You must respond in this language: ${language}
                 
