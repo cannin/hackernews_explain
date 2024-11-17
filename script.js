@@ -74,11 +74,13 @@ window.onload = function() {
                 * Google: a multinational technology company that specializes in Internet-related services and products
                 * IntelliJ IDEA: a Java integrated development environment for software developers:
                             
-                There are two requirements to the response; both must be met: 
+                There are 3 requirements to the response; both must be met: 
 
-                Requirement 1: Respond in this language: ${language}. Do not tranlate the word or phrase being explained; it should be the untranslated word from the original description. Words used as the basis of acronyms should both untranslated and translated (i.e., CSS: Cascading Style Sheets o Hojas de Estilo en Cascada).
+                Requirement 1: Respond in this language: ${language}. Do not tranlate the word or phrase being explained; it should be the untranslated word from the original description. 
                 
-                Requirement 2: Return a short description summary and a bulleted list of explanations as unordered HTML <ul> with <li> items. Do not include explanations in the description summary. Returned text must not have XML tags, no new lines, no paraphrasing or repeating the title. Do not repeat that you are making a summary.
+                Requirement 2: Acronyms: Words used as the basis of acronyms should BOTH untranslated AND translated (i.e., CSS: Cascading Style Sheets o Hojas de Estilo en Cascada).
+                
+                Requirement 3: Return a short description summary and a bulleted list of explanations as unordered HTML <ul> with <li> items. Do not include explanations in the description summary. Returned text must not have XML tags, no new lines, no paraphrasing or repeating the title. Do not repeat that you are making a summary.
 
                 \nTitle: ${title}\nDescription: ${description}`;
               
