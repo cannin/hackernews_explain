@@ -63,7 +63,7 @@ window.onload = function() {
                 description = tmp.textContent || tmp.innerText || "";
 
                 // Create the prompt for the API
-                const prompt = `Read the following title and description to generate a summary of the title and comment in the description tag that includes short explanations for high school students of all main technology topics mentioned (e.g., software, tools, APIs, companies, acronyms, tech jargon).
+                const prompt = `Read the following title and description to generate a summary of the title and comment in the description tag that includes short explanations for high school students of all main technology topics mentioned. For example: software, tools, APIs, companies, acronyms, tech jargon; do not include people.
 
                 Examples of good short explanations: 
                 * A/B tests: comparing two versions of something to see which works better
@@ -72,7 +72,7 @@ window.onload = function() {
                 * API: Application Programming Interface, a set of rules that allows different software applications to communicate with each other
                 * SLOC: Source Lines of Code, a software metric used to measure the size of a computer program
                 * Google: a multinational technology company that specializes in Internet-related services and products
-                * IntelliJ IDEA: a Java integrated development environment for software developers:
+                * IntelliJ IDEA: a Java integrated development environment for software developers.
                             
                 There are 3 requirements to the response; both must be met: 
 
