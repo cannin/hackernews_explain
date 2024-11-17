@@ -74,6 +74,8 @@ window.onload = function() {
                 * Google (a multinational technology company that specializes in Internet-related services and products)
                 * IntelliJ IDEA (a Java integrated development environment for software developers)
                 
+                Also, bold <b> HTML tags around important words and keywords in the summaries. Highlight key words and phrases (e.g., names, institutes, locations, amounts) with bold. At least 1 word must be made bold per summary. IMPORTANT USE HTML <b> not Markdown tags!!! Example: <b>Biden</b> visited <b>Vietnam</b> today.
+                
                 You must respond in this language: ${language}
                 
                 \n\nTitle: ${title}\nDescription: ${description}`;
@@ -107,7 +109,7 @@ window.onload = function() {
 
                     const listItem = document.createElement("li");
                     listItem.innerHTML = `
-                        <p><b>Title:</b> ${title}</p>
+                        <p><b>Title: ${title}</b></p>
                         <p><b>Original Comment:</b> ${description}</p>
                         <p><b>Summary:</b> ${summary} <a href='${link}' target='_blank'>[Link]</a></p>
                     `;
