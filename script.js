@@ -37,6 +37,9 @@ window.onload = function() {
     // Set up the main container
     const mainDiv = document.getElementById('main');
 
+    // Create an ordered list element
+    const olDiv = document.createElement('ol');
+
     // OpenAI API URL
     const apiUrl = "https://api.openai.com/v1/chat/completions";
 
@@ -116,8 +119,12 @@ window.onload = function() {
                         .filter(result => result !== undefined) // Filter out failed requests
                         .sort((a, b) => a.index - b.index) // Sort by original order
                         .forEach(result => {
-                            mainDiv.innerHTML += result.listItemHtml;
+                            olDiv.innerHTML += result.listItemHtml;
                         });
+
+                    // Replace the contents of mainDiv with olDiv once all promises are resolved
+                    mainDiv.innerHTML = '';
+                    mainDiv.appendChild(olDiv);
                 })
                 .catch(error => {
                     console.error("ERROR: Processing items:", error);
