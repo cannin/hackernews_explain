@@ -57,6 +57,7 @@ window.onload = function() {
                 let title = item.getElementsByTagName("title")[0].textContent;
                 let comment = item.getElementsByTagName("description")[0].textContent;
                 let link = item.getElementsByTagName("link")[0].textContent;
+                let commentsLink = item.getElementsByTagName("comments")[0].textContent;
 
                 // Strip HTML tags from the comment
                 const tmp = document.createElement("div");
@@ -119,8 +120,8 @@ window.onload = function() {
                     const listItem = document.createElement("li");
                     listItem.innerHTML = `
                         <p id="title"><b>${title}</b></p>
-                        <!-- <p><b>Original Comment:</b> ${comment}</p> -->
-                        <p id="summary"><b>Summary:</b> ${summary} <a href='${link}' target='_blank'>[Link]</a></p>
+                        <!-- <p id="comment"><b>Original Comment:</b> ${comment}</p> -->
+                        <p id="summary"><b>Summary:</b> ${summary} <a href='${link}' target='_blank'>[Link]</a>&nbsp;<a href='${commentsLink}' target='_blank'>[Comments]</a></p>
                     `;
                     mainDiv.appendChild(listItem);
                 })
