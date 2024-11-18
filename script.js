@@ -53,7 +53,8 @@ window.onload = function() {
 
             // Iterate over each RSS item and send the title and comment to the OpenAI API
             items.forEach(item => {
-                let title = item.getElementsByTagName("title")[0].textContent.match(/"(.*?)"/)[1];
+                //let title = item.getElementsByTagName("title")[0].textContent.match(/"(.*?)"/)[1];
+                let title = item.getElementsByTagName("title")[0].textContent;
                 let comment = item.getElementsByTagName("description")[0].textContent;
                 let link = item.getElementsByTagName("link")[0].textContent;
 
@@ -63,7 +64,7 @@ window.onload = function() {
                 comment = tmp.textContent || tmp.innerText || "";
 
                 // Create the prompt for the API
-                const prompt = `Read the following title and comment to generate a summary that includes short definitions for high school students of all main technology topics mentioned. For example: software, tools, APIs, companies, acronyms, tech jargon; do not include people.
+                /*const prompt = `Read the following title and comment to generate a summary that includes short definitions for high school students of all main technology topics mentioned. For example: software, tools, APIs, companies, acronyms, tech jargon; do not include people.
 
                 Examples of good definitions with bolded <b> words:
                 * **A/B tests** comparing two versions of something to see which works better
@@ -84,7 +85,9 @@ window.onload = function() {
 
                 The response is incorrect unless all requirements are followed.
 
-                \nTitle: ${title}\nComment: ${comment}`;
+                \nTitle: ${title}\nComment: ${comment}`;*/
+
+                const prompt = `In 1-3 sentences, explain why this might be interesting, define any tech jargon in 1-2 sentences, and bold with HTML <b> any keywords. Respond in this language: ${language}. INPUT: ${title}`;
               
                 console.log("Prompt: " + prompt);
 
@@ -115,8 +118,8 @@ window.onload = function() {
 
                     const listItem = document.createElement("li");
                     listItem.innerHTML = `
-                        <p><b>Title: ${title}</b></p>
-                        <p><b>Original Comment:</b> ${comment}</p>
+                        <p><b>${title}</b></p>
+                        <!-- <p><b>Original Comment:</b> ${comment}</p> -->
                         <p><b>Summary:</b> ${summary} <a href='${link}' target='_blank'>[Link]</a></p>
                     `;
                     mainDiv.appendChild(listItem);
