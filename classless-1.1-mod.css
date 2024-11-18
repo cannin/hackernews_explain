@@ -166,6 +166,7 @@ nav { width: 100%; background-color: var(--clight); }
 
 b { color: var(--cb) }
 li { padding-bottom: 10px; }
+#summary { text-align: justify; }
 
 /* Auto Numbering: figure/tables/headings/cite */
 article { counter-reset: h2 0 h3 0 tab 0 fig 0 lst 0 ref 0 eq 0; }

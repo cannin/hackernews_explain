@@ -118,9 +118,9 @@ window.onload = function() {
 
                     const listItem = document.createElement("li");
                     listItem.innerHTML = `
-                        <p><b>${title}</b></p>
+                        <p id="title"><b>${title}</b></p>
                         <!-- <p><b>Original Comment:</b> ${comment}</p> -->
-                        <p><b>Summary:</b> ${summary} <a href='${link}' target='_blank'>[Link]</a></p>
+                        <p id="summary"><b>Summary:</b> ${summary} <a href='${link}' target='_blank'>[Link]</a></p>
                     `;
                     mainDiv.appendChild(listItem);
                 })
